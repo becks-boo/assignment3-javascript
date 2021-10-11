@@ -21,12 +21,13 @@ console.log(`add1 + add2 = ${add1} + ${add2} = ${sum}`);
  */
 
 const cantChange = 5;
-cantChange = 10;
+// cantChange = 10;
 // to make it work, comment out the line "cantChange = 10" with // or /* ... */
 
 
 // let has a special complexity in terms of SCOPE
 let one = "one";
+let two;
 if (one === "one") {
     let two = "two";
 }
@@ -46,7 +47,7 @@ const three = [one, two, "three"];
 /*
  * an array is a collection of key-value pairs. The keys start with the index 0.
  */
-if (three[/* what key to get the value "three"? */] === "three") {
+if (three[2] === "three") {
     console.log("Success! Moving on...");
 }
 
@@ -56,9 +57,9 @@ three.push("four");
  * Welcome to the fun world of programming! ^^
  * The const is pointing to an array. And this "pointer" is not changing. Only the contents of this array
  */
-three = ["four"]; // won't work though because ["four"] is a new array!
+// three = ["four"]; // won't work though because ["four"] is a new array!
 
-if (/* how to get the size of an array? */ === 4) {
+if (three.length === 4) {
     console.log("Success! Moving on...");
 }
 
@@ -78,7 +79,7 @@ for (let i=0; i < 3; i++) {
 /*
  * Calculating with variables
  */
-let four = three[/* ? */] + three[/* ? */];
+let four = three[1] + three[3];
 let four = 4;
 if (four === 4) {
     three.push(four);
