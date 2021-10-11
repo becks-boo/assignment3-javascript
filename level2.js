@@ -114,7 +114,7 @@ for (let number in numbers) {
 
 const LIMIT = 100;
 
-for (let i=0; i < limit; i++) {
+for (let i=0; i < LIMIT; i++) {
     /**
      *	YOUR CODE STARTS HERE
      */
