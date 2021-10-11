@@ -47,11 +47,8 @@ const three = [one, two, "three"];
 /*
  * an array is a collection of key-value pairs. The keys start with the index 0.
  */
-<<<<<<< HEAD
-if (three[2] === "three") {
-=======
+
 if (three[1234/* what key to get the value "three"? */] === "three") {
->>>>>>> c8e449ae05e860d2016d7ef767eb5e1c5fae0121
     console.log("Success! Moving on...");
 }
 
@@ -63,11 +60,7 @@ three.push("four");
  */
 // three = ["four"]; // won't work though because ["four"] is a new array!
 
-<<<<<<< HEAD
-if (three.length === 4) {
-=======
 if (1234/* how to get the size of an array? */ === 4) {
->>>>>>> c8e449ae05e860d2016d7ef767eb5e1c5fae0121
     console.log("Success! Moving on...");
 }
 
@@ -87,12 +80,8 @@ for (let i=0; i < 3; i++) {
 /*
  * Calculating with variables
  */
-<<<<<<< HEAD
-let four = three[1] + three[3];
-let four = 4;
-=======
+
 let four = three[1234/* ? */] + three[1234/* ? */];
->>>>>>> c8e449ae05e860d2016d7ef767eb5e1c5fae0121
 if (four === 4) {
     three.push(four);
 }
