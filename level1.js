@@ -46,7 +46,7 @@ const three = [one, two, "three"];
 /*
  * an array is a collection of key-value pairs. The keys start with the index 0.
  */
-if (three[/* what key to get the value "three"? */] === "three") {
+if (three[1234/* what key to get the value "three"? */] === "three") {
     console.log("Success! Moving on...");
 }
 
@@ -58,7 +58,7 @@ three.push("four");
  */
 three = ["four"]; // won't work though because ["four"] is a new array!
 
-if (/* how to get the size of an array? */ === 4) {
+if (1234/* how to get the size of an array? */ === 4) {
     console.log("Success! Moving on...");
 }
 
@@ -78,8 +78,7 @@ for (let i=0; i < 3; i++) {
 /*
  * Calculating with variables
  */
-let four = three[/* ? */] + three[/* ? */];
-let four = 4;
+let four = three[1234/* ? */] + three[1234/* ? */];
 if (four === 4) {
     three.push(four);
 }
@@ -113,21 +112,22 @@ if (three.length === 5) {
 /*
  * Now multiply 5 by 4, divide it by 2 and add 3! Do this in one line!
  */
-let thirteen = /* ... */;
+let thirteen; /* = ...; */
 
 /*
  * An operator that you already saw in the Coding Escape Game was the modulo operator that returns you the rest of a
  * division. This operator is extremely useful in many cases! You should definitely keep it in mind.
  */
 
-if (thirteen /* ? */ 10 === 3) {
+// replace "+" by the correct operator
+if (thirteen + 10 === 3) {
     console.log("Success! Moving on...");
 }
 
 /*
  * Let's finish up calculation and arrays
  */
-three.push((three[2] / three[1]) * three[/* ? */]);
+three.push((three[2] / three[1]) * three[1234]); // replace 1234
 
 if (three[5] === 6) {
     console.log("Success! One last thing...");

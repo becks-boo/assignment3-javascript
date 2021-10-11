@@ -111,13 +111,18 @@ if ("'row' from first row" === "'row' from second row") {
 const even = [2, 4, 6, 8, 10];
 const odd = [1, 3, 5, 7, 9];
 
-const result = [];
+const result =  []; // @TODO
 
 // Use a/multiple loop functions of your choice to push the values of odd and even into an array
 
 /* Your code goes here. */
 
-if (result === [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+/** Helper method to compare arrays in JS */
+function compareArrays(array1, array2) {
+    return JSON.stringify(array1) === JSON.stringify(array2);
+}
+
+if (compareArrays(result, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) {
     console.log("Success. Moving on...");
 }
 
