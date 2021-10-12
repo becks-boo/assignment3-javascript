@@ -10,8 +10,8 @@ output='';
 i=0;
 do {
     output += sentence[i] + " ";
-} while (i++ < sentence.length);
-console.log(output); // Note the "undefined" at the end! Why did this happen?
+} while (++i < sentence.length);
+console.log(output.replace(' !', '!')); // Note the "undefined" at the end! Why did this happen?
 
 // WHILE
 output='';
@@ -19,7 +19,7 @@ i=0;
 while (i < sentence.length) {
     output = output + sentence[i++] + " ";
 }
-console.log(output);
+console.log(output.replace(' !', '!'));
 
 // FOR
 output='';
@@ -27,7 +27,7 @@ i=0;
 for (i = 0; i < sentence.length; i++) {
     output = `${output}${sentence[i]} `;
 }
-console.log(output);
+console.log(output.replace(' !', '!'));
 
 // FOR...IN
 output='';
@@ -35,7 +35,7 @@ i=0;
 for (let key in sentence) {
     output += sentence[key] + " ";
 }
-console.log(output);
+console.log(output.replace(' !', '!'));
 
 // FOR...OF
 output='';
@@ -43,7 +43,7 @@ i=0;
 for (let word of sentence) {
     output += word + " ";
 }
-console.log(output);
+console.log(output.replace(' !', '!'));
 
 
 // Study the examples above. What are the differences? What's is more useful in which situation?
@@ -57,15 +57,45 @@ console.log(output);
  */
 
 // DO...WHILE
+sentence.reverse();
+output='';
+i=0;
+do {
+    output += sentence[i] + " ";
+} while (++i < sentence.length);
+console.log(output.replace('! ', '!'));
 
 // WHILE
+output='';
+i=0;
+while (i < sentence.length) {
+    output = output + sentence[i++] + " ";
+}
+console.log(output.replace('! ', '!'));
 
 // FOR
+output='';
+i=0;
+for (i = 0; i < sentence.length; i++) {
+    output = `${output}${sentence[i]} `;
+}
+console.log(output.replace('! ', '!'));
 
 // FOR...IN
+output='';
+i=0;
+for (let key in sentence) {
+    output += sentence[key] + " ";
+}
+console.log(output.replace('! ', '!'));
 
 // FOR...OF
-
+output='';
+i=0;
+for (let word of sentence) {
+    output += word + " ";
+}
+console.log(output.replace('! ', '!'));
 
 /**
  * MULTI-DIMENSIONAL ARRAYS
@@ -104,18 +134,25 @@ console.log(`multi[0][0]: ${multi[0][0]}`);
 // The first number decides about the "row"/sub-array, the second index decides about the position inside the sub-array
 
 // replace the two strings inside the if-clause, so they point to the two mentioned columns inside multi!
-if ("'row' from first row" === "'row' from second row") {
+if (`${multi[0][2]}` === `${multi[1][1]}`) {
     console.log("Success. Moving on...");
 }
 
 const even = [2, 4, 6, 8, 10];
 const odd = [1, 3, 5, 7, 9];
 
-const result =  []; // @TODO
+const result = []; // @TODO
 
 // Use a/multiple loop functions of your choice to push the values of odd and even into an array
 
 /* Your code goes here. */
+
+for (let number = 0; number < 5; number++) {
+    result.push(odd[number]);
+    result.push(even[number]);
+}
+console.log(result);
+
 
 /** Helper method to compare arrays in JS */
 function compareArrays(array1, array2) {
@@ -126,13 +163,21 @@ if (compareArrays(result, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) {
     console.log("Success. Moving on...");
 }
 
-const nextLevelResult = [];
+let nextLevelResult = [];
 const nextLevel = [odd, even];
 // Now do the same with a two-dimensional array
 
 /* Your code goes here. */
 
-if (nextLevelResult === [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+for (let num = 0; num < nextLevel.length; num++) {
+     nextLevelResult = nextLevelResult.concat(nextLevel[num]);
+     nextLevelResult.sort(function (a, b) {
+         return a - b;
+     });
+}
+console.log(nextLevelResult);
+
+if (compareArrays(nextLevelResult, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) {
     console.log("Success. Moving on...");
 }
 
@@ -148,6 +193,16 @@ let sortedChaos = [];
 
 /* Your code goes here. */
 
-if (sortedChaos === [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) {
+for (let num = 0; num < chaos.length; num++) {
+    sortedChaos = sortedChaos.concat(chaos[num]);
+    sortedChaos.sort(function (a, b) {
+        return a - b;
+    });
+}
+sortedChaos.shift();
+
+console.log(sortedChaos);
+
+if (compareArrays(sortedChaos, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])) {
     console.log("Success. Moving on...");
 }
