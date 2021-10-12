@@ -2,7 +2,7 @@
  * Conditions!
  */
 
-if (false) {
+if (true) {
     console.log("In the last level, you already saw the if condition.");
 } else {
     console.log("Something went wrong?");
@@ -35,7 +35,7 @@ console.log("Of course, you can also have if-clauses inside if-clauses!");
 
 let comparison = 1 != 1;
 
-if (comparison === true) {
+if (comparison === false) {
     if (!comparison) {
         console.log("Success. Moving on...");
     }
@@ -75,7 +75,7 @@ console.log("Only print out even numbers!")
 let numbers = [...Array(30).keys()];
 for (let number in numbers) {
 
-    if (true) {
+    if ((number % 2) === 0) {
         console.log(number);
     }
 }
@@ -112,10 +112,18 @@ for (let number in numbers) {
  ...
  */
 
-const LIMIT = 100;
+const LIMIT = 30;
 
-for (let i=0; i < LIMIT; i++) {
-    /**
-     *	YOUR CODE STARTS HERE
-     */
+for (let i = 1; i <= LIMIT; i++) {
+
+    if ((i % 3 === 0) && (i % 5 === 0)) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+
 }
