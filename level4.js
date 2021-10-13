@@ -18,8 +18,21 @@
  *	YOUR CODE STARTS HERE
  */
 
+function printStringLength(sentence) {
+    console.log("The sentence has " + sentence.length + " characters.");
+}
+
 printStringLength("Dies ist ein Satz mit 32 Zeichen");
 printStringLength("Vier");
+
+function printAppearance(sentence) {
+    position = sentence.indexOf("Endava");
+    if (position === -1) {
+        console.log("Endava is not found in the input.");
+    } else {
+        console.log("Endava first appears on position: " + position);
+    }
+}
 
 printAppearance("Endava is great!");
 printAppearance("Have I told you about Endava?");
@@ -48,6 +61,12 @@ const persons = [
         city: "Little Whinging, Surrey"
     }
 ];
+
+function printAddressInformation(persons) {
+    console.log(persons.firstName + " " + persons.lastName);
+    console.log(persons.street);
+    console.log(persons.zipCode + " " + persons.city + "\n");
+}
 
 /**
  * To access properties of an object, you can simply write objectName.property to get (OR SET) its value.
